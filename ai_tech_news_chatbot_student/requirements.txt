@@ -1,0 +1,6 @@
+flask
+feedparser
+pandas
+dateparser
+requests
+beautifulsoup4
