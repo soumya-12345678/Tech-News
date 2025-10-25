@@ -37,10 +37,16 @@ async function sendMessage(){
       return false;
     }
     // build HTML
-    let html = "";
-    data.items.forEach(item => {
-      html += `<div style="margin-bottom:10px"><b>${item.title}</b><div style="font-size:0.9rem;color:#444">${item.summary}</div><div style="font-size:0.8rem;margin-top:6px"><a href="${item.link}" target="_blank">Read more</a> · <span style="color:#666">${item.published}</span></div></div>`;
-    });
+    let html = "<ul style='padding-left:20px'>";
+data.items.forEach(item => {
+  html += `<li style="margin-bottom:12px">
+    <div style="font-size:0.95rem; color:#333; margin-bottom:4px;">${item.summary}</div>
+    <a href="${item.link}" target="_blank" style="font-size:0.85rem; color:#0057ff;">${item.link}</a>
+  </li>`;
+});
+html += "</ul>";
+
+
     addBotBubble(html);
   }catch(e){
     // remove placeholder
